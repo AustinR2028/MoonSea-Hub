@@ -21,7 +21,7 @@ Counter:Textbox{
 
 Counter:Button{
 	Name = "Remove Tool Decal",
-	Description = "Remove the icon over an item to reveal the name",
+	Description = "Remove the icon over an item to reveal the name, May not work",
 	Callback = function() 
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/AustinR2028/MoonSea-Hub/main/Buttons/sub.lua"))()
 	end
@@ -29,7 +29,7 @@ Counter:Button{
 
 Counter:Button{
 	Name = "Count Tool Instances",
-	Description = "Remove the icon over an item to reveal the name, May not work",
+	Description = "Remove the icon over an item to reveal the name",
 	Callback = function() 
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/AustinR2028/MoonSea-Hub/main/Buttons/counter.lua"))()
 	end
