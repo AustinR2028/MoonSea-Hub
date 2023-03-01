@@ -29,7 +29,7 @@ Counter:Button{
 
 Counter:Button{
 	Name = "Count Tool Instances",
-	Description = "Remove the icon over an item to reveal the name",
+	Description = "Counts the item under counted item",
 	Callback = function() 
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/AustinR2028/MoonSea-Hub/main/Buttons/counter.lua"))()
 	end
