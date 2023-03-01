@@ -5,6 +5,6 @@ local Tools = table.getn(Items)
 local num = 0
 while num ~= Tools do
 	num = num+1
-  local focus = Tools[num].TextureId
+  local focus = Items[num].TextureId
   focus = nil
 end
