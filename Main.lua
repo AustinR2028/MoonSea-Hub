@@ -10,7 +10,7 @@ local GUI = Mercury:Create{
 
 local Counter = GUI:Tab{
 	Name = "Item Counter",
-	Icon = "rbxassetid://8569322835"
+	Icon = "rbxassetid://12653798475"
 }
 
 Counter:Textbox{
