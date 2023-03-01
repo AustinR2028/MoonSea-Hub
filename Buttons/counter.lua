@@ -5,9 +5,9 @@ local Tools = table.getn(Items)
 local num = 0
 local found = 0
 while num ~= Tools do
-	num = num+1
-  local focus = Tools[num].Name
-  if focus.Name == search then
+  num = num+1
+  local focus = Items[num].Name
+  if focus == search then
     found = found+1
   end
 end
