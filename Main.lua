@@ -1,4 +1,6 @@
 local search = nil
+local ws = nil
+local jp = nil
 local Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/deeeity/mercury-lib/master/src.lua"))()
 
 local GUI = Mercury:Create{
@@ -6,6 +8,51 @@ local GUI = Mercury:Create{
     Size = UDim2.fromOffset(600, 400),
     Theme = Mercury.Themes.Serika,
     Link = "https://github.com/deeeity/mercury-lib"
+}
+
+local Universal = GUI:Tab{
+	Name = "Universal",
+	Icon = "rbxassetid://12653882397"
+}
+
+Universal:Slider{
+	Name = "Speed",
+	Default = 16,
+	Min = 16,
+	Max = 300,
+	Callback = function(value) 
+	  ws = value
+	end
+}
+
+Universal:Slider{
+	Name = "Jump",
+	Default = 50,
+	Min = 50,
+	Max = 500,
+	Callback = function(value) 
+	  jp = value
+	end
+}
+
+Universal:Button{
+	Name = "Speed And Jump Enabled",
+	Description = nil,
+	Callback = function(value)
+	if value == true then
+	  local plr = game:getService("Players").LocalPlayer
+	  local char = plr.character
+	  local hum = char.Humanoid
+	  hum.WalkSpeed = ws
+	  hum.JumpPower = jp
+	else 
+	  local plr = game:getService("Players").LocalPlayer
+	  local char = plr.character
+	  local hum = char.Humanoid
+	  hum.WalkSpeed = 16
+	  hum.JumpPower = 50
+	end
+	end
 }
 
 local Counter = GUI:Tab{
