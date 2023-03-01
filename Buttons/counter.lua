@@ -11,3 +11,4 @@ while num ~= Tools do
     found = found+1
   end
 end
+print(found)
