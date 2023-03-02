@@ -1,7 +1,7 @@
 local search = nil
-local ws = 16
-local jp = 50
-local status = false
+local ws = nil
+local jp = nil
+local status = nil
 local jumpa = false
 local mose = game.Players.LocalPlayer:GetMouse()
 mose.KeyDown:connect(function(key)
@@ -63,6 +63,56 @@ Universal:Toggle{
 	print(jumpa)
     end
 }
+
+Universal:Button{
+	Name = "Sit",
+	Description = "Makes you sit",
+	Callback = function() 
+	local plr = game:getService("Players").LocalPlayer
+    local char = plr.character
+    local hum = char.Humanoid
+    hum.Sit = true
+	end
+}
+
+Universal:Button{
+	Name = "F3x",
+	Description = "F3x building tools (Client)",
+	Callback = function() 
+	loadstring(game:GetObjects("rbxassetid://6695644299")[1].Source)()
+	end
+}
+
+Universal:Button{
+	Name = "Teleport Tool",
+	Description = "Teleports you to your mouse while holding the tool.",
+	Callback = function() 
+	local TpTool = Instance.new("Tool")
+	TpTool.Name = "Teleport Tool"
+	TpTool.RequiresHandle = false
+	TpTool.Parent = game:getService("Players").LocalPlayer.Backpack
+	TpTool.Activated:Connect(function()
+		local Char = game:getService("Players").LocalPlayer.Character
+		local HRP = Char and Char:FindFirstChild("HumanoidRootPart")
+		if not Char or not HRP then
+			return warn("Failed to find HumanoidRootPart")
+		end
+		HRP.CFrame = CFrame.new(IYMouse.Hit.X, IYMouse.Hit.Y + 3, IYMouse.Hit.Z)
+	end)
+	end
+}
+
+Universal:Button{
+	Name = "Credits Prompt",
+	Description = "Shows a credit list",
+	Callback = function()
+	    GUI:Notification{
+	Title = "Credits",
+	Text = "@Hd19p, Creator. Infinite Yield Source, some scripts.",
+	Duration = 10,
+	Callback = function()
+	end}
+end}
 
 local Counter = GUI:Tab{
 	Name = "Item Counter",
@@ -128,3 +178,4 @@ while wait(0.05) do
     hum.JumpPower = 50
   end
 end
+
