@@ -107,8 +107,3 @@ Counter:Button{
 	print(found)
 	end
 }
-
-
-while wait(10) do
-	print(ws,jp,status)
-end
