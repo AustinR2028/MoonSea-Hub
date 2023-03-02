@@ -2,6 +2,15 @@ local search = nil
 local ws = nil
 local jp = nil
 local status = nil
+local jumpa = false
+local mose = game.Players.LocalPlayer:GetMouse()
+mose.KeyDown:connect(function(key)
+    if key:byte() == 32 then
+        if jumpa == true then
+            game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid'):ChangeState(3)
+        end
+    end
+end)
 local Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/deeeity/mercury-lib/master/src.lua"))()
 
 local GUI = Mercury:Create{
@@ -41,22 +50,18 @@ Universal:Toggle{
 	StartingState = false,
 	Description = nil,
 	Callback = function(state) 
-	print(state)
 	status = state
-	if state == true then
-	  local plr = game:getService("Players").LocalPlayer
-	  local char = plr.character
-	  local hum = char.Humanoid
-	  hum.WalkSpeed = ws
-	  hum.JumpPower = jp
-	else 
-	  local plr = game:getService("Players").LocalPlayer
-	  local char = plr.character
-	  local hum = char.Humanoid
-	  hum.WalkSpeed = 16
-	  hum.JumpPower = 50
 	end
-	end
+}
+
+Universal:Toggle{
+	Name = "Infinite Jump",
+	StartingState = false,
+	Description = nil,
+	Callback = function(state) 
+	jumpa = state
+	print(jumpa)
+    end
 }
 
 local Counter = GUI:Tab{
