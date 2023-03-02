@@ -36,24 +36,10 @@ Universal:Slider{
 }
 
 Universal:Toggle{
-	Name = "Speed And Jump Enabled",
+	Name = "Boosts Enabled",
 	StartingState = false,
 	Description = nil,
-	Callback = function(state)
-	if state == true then
-	  local plr = game:getService("Players").LocalPlayer
-	  local char = plr.character
-	  local hum = char.Humanoid
-	  hum.WalkSpeed = ws
-	  hum.JumpPower = jp
-	else 
-	  local plr = game:getService("Players").LocalPlayer
-	  local char = plr.character
-	  local hum = char.Humanoid
-	  hum.WalkSpeed = 16
-	  hum.JumpPower = 50
-	end
-	end
+	Callback = function(state) end
 }
 
 local Counter = GUI:Tab{
