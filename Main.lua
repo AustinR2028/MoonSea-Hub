@@ -107,3 +107,19 @@ Counter:Button{
 	print(found)
 	end
 }
+
+while wait(0.05) do 
+  if status == true then
+    local plr = game:getService("Players").LocalPlayer
+    local char = plr.character
+    local hum = char.Humanoid
+    hum.WalkSpeed = ws
+    hum.JumpPower = jp
+  else 
+    local plr = game:getService("Players").LocalPlayer
+    local char = plr.character
+    local hum = char.Humanoid
+    hum.WalkSpeed = 16
+    hum.JumpPower = 50
+  end
+end
