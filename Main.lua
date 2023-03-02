@@ -1,6 +1,7 @@
 local search = nil
 local ws = nil
 local jp = nil
+local status = nil
 local Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/deeeity/mercury-lib/master/src.lua"))()
 
 local GUI = Mercury:Create{
@@ -41,6 +42,7 @@ Universal:Toggle{
 	Description = nil,
 	Callback = function(state) 
 	print(state)
+	status = state
 	if state == true then
 	  local plr = game:getService("Players").LocalPlayer
 	  local char = plr.character
@@ -105,3 +107,8 @@ Counter:Button{
 	print(found)
 	end
 }
+
+
+while wait(10) do
+	print(ws,jp,status)
+end
