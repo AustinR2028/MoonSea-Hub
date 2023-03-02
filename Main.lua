@@ -39,7 +39,21 @@ Universal:Toggle{
 	Name = "Boosts Enabled",
 	StartingState = false,
 	Description = nil,
-	Callback = function(state) end
+	Callback = function(state) 
+	  if state == true then
+	  local plr = game:getService("Players").LocalPlayer
+	  local char = plr.character
+	  local hum = char.Humanoid
+	  hum.WalkSpeed = ws
+	  hum.JumpPower = jp
+	else 
+	  local plr = game:getService("Players").LocalPlayer
+	  local char = plr.character
+	  local hum = char.Humanoid
+	  hum.WalkSpeed = 16
+	  hum.JumpPower = 50
+	end
+	end
 }
 
 local Counter = GUI:Tab{
@@ -57,7 +71,16 @@ Counter:Button{
 	Name = "Remove Tool Decal",
 	Description = "Remove the icon over an item to reveal the name, May not work",
 	Callback = function() 
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/AustinR2028/MoonSea-Hub/main/Buttons/sub.lua"))()
+	local plr = game:getService("Players").LocalPlayer
+	local backpack = plr.Backpack
+	local Items = backpack:getChildren()
+	local Tools = table.getn(Items)
+	local num = 0
+	while num ~= Tools do
+	num = num+1
+ 	 local focus = Items[num].TextureId
+	  focus = nil
+	end
 	end
 }
 
