@@ -35,11 +35,12 @@ Universal:Slider{
 	end
 }
 
-Universal:Button{
+Universal:Toggle{
 	Name = "Speed And Jump Enabled",
+	StartingState = false,
 	Description = nil,
-	Callback = function(value)
-	if value == true then
+	Callback = function(state)
+	if state == true then
 	  local plr = game:getService("Players").LocalPlayer
 	  local char = plr.character
 	  local hum = char.Humanoid
