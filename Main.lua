@@ -40,7 +40,8 @@ Universal:Toggle{
 	StartingState = false,
 	Description = nil,
 	Callback = function(state) 
-	  if state == true then
+	print(state)
+	if state == true then
 	  local plr = game:getService("Players").LocalPlayer
 	  local char = plr.character
 	  local hum = char.Humanoid
