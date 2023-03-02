@@ -1,7 +1,7 @@
 local search = nil
-local ws = nil
-local jp = nil
-local status = nil
+local ws = 16
+local jp = 50
+local status = false
 local jumpa = false
 local mose = game.Players.LocalPlayer:GetMouse()
 mose.KeyDown:connect(function(key)
